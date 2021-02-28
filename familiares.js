@@ -89,7 +89,7 @@ const familiares = [
 	Profesión: "Programador",
 	Residencia: "Ciudad Autónoma de Buenos Aires | Argentina", 
 	Título: "", 
-	img: "https://media-exp1.licdn.com/dms/image/C4E03AQE1SNZwuHk-5w/profile-displayphoto-shrink_200_200/0/1538574866228?e=1620259200&v=beta&t=3C01KZgaTqnJ2iESD5cjEYNtRIWqtwW2l_iGputRppY", 
+	img: "./img/hectornicolascaffarini.jpg", 
 	Contacto: "hncaffarini@gmail.com" },
 { 
 	id: 11,
