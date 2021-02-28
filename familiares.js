@@ -79,7 +79,7 @@ const familiares = [
 	Nacionalidad: "Argentina", 
 	Residencia: "Ciudad Autónoma de Buenos Aires | Argentina", 
 	Título: "", 
-	img: "./img/Mujer_1.jpg" },
+	img: "./img/Mujer_2.jpg" },
 { 
 	id: 10,
 	pid: 7, 
@@ -101,4 +101,15 @@ const familiares = [
 	Título: "",
 	Profesión: "Cirujano",
 	img: "./img/Hombre_1.jpg" },
+{ 
+	id: 12,
+	pid: 4, 
+	Nombre: "Patricia Caffarini",
+	img: "./img/Mujer_1.jpg" },
+{ 
+	id: 13,
+	pid: 5, 
+	tags: ["partner"],
+	Nombre: "Enrique Di Leone",
+	img: "./img/Hombre_1.jpg" }
 ]
