@@ -41,7 +41,7 @@ const familiares = [
 	ppid: 2, 
 	Nombre: "Clara Caffarini", 
 	Título: "", 
-	img: "./img/Mujer_1.jpg" },
+	img: "./img/Mujer_1_inv.jpg" },
 { 
 	id: 6, 
 	pid:3, 
@@ -70,7 +70,7 @@ const familiares = [
 	Profesión: "Médica",
 	Residencia: "Mar del Plata | Buenos Aires | Argentina", 
 	Título: "", 
-	img: "./img/Mujer_1.jpg" },
+	img: "./img/Mujer_1_inv.jpg" },
 { 
 	id: 9, 
 	pid:7, 
@@ -100,7 +100,7 @@ const familiares = [
 	Residencia: "Mar del Plata | Buenos Aires | Argentina", 
 	Título: "",
 	Profesión: "Cirujano",
-	img: "./img/Hombre_1.jpg" },
+	img: "./img/Hombre_1_inv.jpg" },
 { 
 	id: 12,
 	pid: 4, 
@@ -111,5 +111,5 @@ const familiares = [
 	pid: 5, 
 	tags: ["partner"],
 	Nombre: "Enrique Di Leone",
-	img: "./img/Hombre_1.jpg" }
+	img: "./img/Hombre_1_inv.jpg" }
 ]
