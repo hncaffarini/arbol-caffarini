@@ -1,6 +1,110 @@
 const familiares = [
 { 
+	id: 0, 
+	tags: ["blue"], 
+	Nombre: "Basso Caffarini",
+	Nacionalidad: "Italiana", 
+	Residencia: "",
+	img: "./img/Hombre_1.jpg",
+	Nacimiento: "./img/Hombre_1.jpg"
+},
+{ 
+	id: 500, 
+	pid: 0, 
+	tags: ["partner"], 
+	Nombre: "Anna Palestini", 
+	Nacionalidad: "Italiana",
+	img: "./img/Mujer_1.jpg" 
+},
+{ 
+	id: 501, 
+	pid: 0,
+	ppid: 500,
+	tags: ["blue"], 
+	Nombre: "Andrea Caffarini",
+	Nacionalidad: "Italiana", 
+	Residencia: "",
+	img: "./img/Hombre_1.jpg",
+},
+{ 
+	id: 550, 
+	pid: 501, 
+	tags: ["partner"], 
+	Nombre: "Rachele De Palma", 
+	Nacionalidad: "Italiana",
+	img: "./img/Mujer_1.jpg" 
+},
+{ 
+	id: 502, 
+	pid: 501,
+	ppid: 550,
+	tags: ["blue"], 
+	Nombre: "Tomasso Caffarini",
+	Nacionalidad: "Italiana", 
+	Residencia: "",
+	img: "./img/Hombre_1.jpg",
+},
+{ 
+	id: 552, 
+	pid: 502, 
+	tags: ["partner"], 
+	Nombre: "María Chiara de Benedectis", 
+	Nacionalidad: "Italiana",
+	img: "./img/Mujer_1.jpg" 
+},
+{
+	id: 900, 
+	pid: 502,
+	ppid: 552,
+	Nombre: "Nicola Caffarini", 
+	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 901, 
+	pid: 502,
+	ppid: 552,
+	Nombre: "Giovanni Caffarini", 
+	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 902, 
+	pid: 502,
+	ppid: 552,
+	Nombre: "Titto Caffarini", 
+	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 903, 
+	pid: 502,
+	ppid: 552,
+	Nombre: "María Rachele Caffarini", 
+	img: "./img/Mujer_1.jpg"
+},
+{
+	id: 904, 
+	pid: 502,
+	ppid: 552,
+	Nombre: "Luis Caffarini", 
+	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 905, 
+	pid: 502,
+	ppid: 552,
+	Nombre: "Pedro Caffarini", 
+	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 906, 
+	pid: 502,
+	ppid: 552,
+	Nombre: "Ana Caffarini", 
+	img: "./img/Mujer_1.jpg"
+},
+{
 	id: 1, 
+	pid: 502,
+	ppid: 552,
 	tags: ["blue"], 
 	Nombre: "Domingo Caffarini", 
 	Nacionalidad: "Argentina", 
