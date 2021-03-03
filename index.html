@@ -23,13 +23,58 @@
 			display: none;
 		}
 
-		.edit-fields {
+		.edit-fields,
+		.details-view {
 			overflow: scroll;
 		}
 
 		textarea {
 		  resize: vertical;
 		}
+
+		.icon {
+		  display: inline-block;
+		  width: 1em;
+		  height: 1em;
+		  stroke-width: 0;
+		  stroke: currentColor;
+		  fill: currentColor;
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0,0.4);
+		}
+
+		.modal-content {
+			background-color: #fefefe;
+			margin: 15% auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		} 
 
     </style>
 
@@ -40,9 +85,30 @@
 
 	<div id="tree"></div>
 
+	<button id="myBtn"></button>
+	<div id="modal-introduccion" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>La historia de los Caffarini en Argentina se remonta al 28 de marzo de 1883, cuando Tommaso Caffarini, un zapatero de 35 años oriundo de la localidad costera de Ortona, en la región de Abruzzo, llega al puerto de Buenos Aires en el buque Orenoque procedente de Génova.</p>
+			<p>Aunque Tommaso había nacido en Ortona, venía de una familia de marineros que llevaban varias generaciones residiendo en San Benedetto del Tronto (Marche), ciudad que se había convertido en un importante puerto pesquero por el desarrollo de la técnica de pesca “en parejas”. Su padre Andrea, marinero, se había trasladado a vivir a Ortona, a 85 km de San Benedetto, porque había conocido a la que sería su mujer. Rachele de Palma. Tomasso, a su vez, se trasladó de Ortona a Casoli para casarse con su mujer, Maria Chiara de Benedictis.</p>
+			<p>Habrá sido una decisión muy dura la de Tomasso, que dejaba en Italia a su esposa Maria Chiara de Benedictis y a cuatro hijos, Nicola (nacido el 9 dic 1876), Giovanni (1878), Titto (1881) y Maria Rachele (Marietta), nacida el 31 enero de 1883. Unos días después de anotar a Marietta en el Registro Civil, Tommaso marchó a Génova para poner rumbo a Argentina. Presumiblemente se establece primero en Capital Federal, más tarde en San Isidro y alrededor de 1894 en Echeverría (hoy Rafael Obligado, provincia de Buenos Aires).</p>
+			<p>Poco después, el 29 de julio de 1884 llegó a Argentina en el buque Umberto I Rocco Caffarini, hermano menor de Tommaso, de 35 años, Rocco que fiel a la tradición familiar también era marinero, vivió un tiempo en Génova con su esposa Filomena Primavera antes de embarcarse rumbo a Argentina. Allí habían tenido (al menos) dos hijos: Agostino en 1878 (que falleció en 1882) y Alfredo en 1883.</p>
+			<p>El 28 de diciembre de 1884 llega desde Génova Filomena en el buque Elbe. Filomena viaja acompañada de su cuñada Teresa Caffarini de 22 años, hermana menor de Tommaso y Rocco. Todo parece indicar que Rocco, Filomena y Teresa se establecen en la calle Reconquista 510 de Buenos Aires (donde en 1886 nace su hijo Ernesto). Más tarde (1894), vive en la calle Santa Fe de San Isidro. Rocco no sabía leer ni escribir.</p>
+			<p>El 14 de julio de 1892 llega a Buenos Aires, tras hacer escala en Río de Janeiro y Montevideo, María Chiara de Benedictis, esposa de Tommaso, con sus tres hijos, Nicola, Giovanni y Maria Rachele para reunirse con su marido después de estar 9 años separados. Titto había fallecido. En torno a 1895, Tomasso se estableció en la localidad de Echeverría de la Provincia de Buenos Aires (hoy Rafael Obligado).</p>
+			<p>Nicolás (nació 9 dic 1876). Se casó con Celedonia García (que tenía 16 años) en 1904. No tuvo hijos, trabajaba en ferrocarriles (telegrafista), pero adoptó a Juancito (hijo de Juan, que tenía ferretería en Hurlingham) Murió a los 91 años, el 6 de enero de 1968 (bóveda). Llegó a vivir en Directorio? Juan se casó con Marianna Stagnari (en 1909). Tuvieron varios hijos Juan Angel (Juancito) en 1911, Tomás Manuel (Tomasito), en 1912, Elida Clara (Nelly) en 1914 (tiene una hija arquitecta) y Oscar Roque en 1915. Juan murió a los 69 años el 26 de marzo de 1948 (bóveda). Mariana murió a los 63 años el 27 de diciembre de 1952. Juancito murió el 27 de agosto de 1940 (bóveda). Todos nacidos en Rojas.</p>
+			<p>Maria Rachele (Marietta) se casó con Martin Christin, casa de electricidad. Tuvo a Horacio Pedro Cristin en 1905, Elvira Cristin en 1909, Hector Sixto Christin en 1914. Angélica. Uno era corredor de autos y se mató viajando a Rojas.</p>
+			<p>Domingo peluquero casado con Tita (Natalia Pizzi). Murió por una operación de apéndice el 27 de agosto de 1936. Era pelirrojo Tuvo 3 hijos: Nicolita (murió en 1958-60) que tuvo una hija llamada Patricia Caffarini, Clarita (se fue a vivir a Mar del Plata con Natalia y Héctor, se casó con Enrique Di Leone y tuvo un hijo llamado Enrique o Pity, que tuvo tres hijos varones) y Héctor (médico que se fue a vivir a Mar del Plata con el tema del parto sin dolor, que tuvo a Héctor Domingo Caffarini que vive en M del Plata y que, a su vez, tuvo a Héctor Nicolás Caffarini). Calle Lautaro? Comprobado que nació en 1897 (quizás el 11 de julio).</p>
+			<p>Ana Luisa (Anita) mujer liberal tenía un hijo, que se suicidó cuando se murió su madre, a los 24 años el 13/2/1953. Tomasito o Cachito (Tomás Osvaldo Zambrini). Ana murió el 17/12/1952 (bóveda). Su marido era el Sr. Zambrini.</p>
+			<p>Pedro casado con Elba Lidia. Pedro murió en 1982. Cuca se casó de grande, sin hijos. Su hermano era Osvaldo Tomás, que tuvo 2 hijas: Silvia Anahí y Alicia Inés. La primera está casada con Juan Carlos Etcharren y tiene dos hijas: Matías y Paula. La segunda está casada con Cristian Castro Rey y tienen dos hijos Fernando y Martín. Pedro murió a los 82 años el 8 de septiembre de 1982.</p>
+		</div>
+	</div>
+
     <script>
     
 		window.onload = function () {
+
+			var modal = document.getElementById("modal-introduccion");
+
 		    OrgChart.templates.family_template = Object.assign({}, OrgChart.templates.ana);
 		    OrgChart.templates.family_template.size = [86, 86];
 		    OrgChart.templates.family_template.plus = "";
@@ -70,6 +136,22 @@
 		            blue: {
 		                template: "family_template_blue"
 		            }
+		        },
+		        menu: {
+		        	mostrarHistoria: { 
+		        		text: "Breve introducción",
+		        		icon: "",
+		        		onClick: function(){
+		        			modal.style.display = "block";
+		        		}
+		        	},
+		        	linkGithub: { 
+		        		text: "Ver proyecto",
+		        		icon: "",
+		        		onClick: function(){
+		        			window.open("https://github.com/hncaffarini/arbol-caffarini",'_blank');
+		        		}
+		        	}
 		        }
 		    });
 
@@ -81,14 +163,18 @@
 
 		    chart.editUI.on('field', function(sender, args){
 
+				var datos_persona = args.field.querySelector('input')
+
+				if (datos_persona != null){
+	                if (datos_persona.value == ""){
+	                	return false; // Esconde los datos incompletos de las personas
+	                }
+				}
+
 		    	if (args.name == 'Biografía'){
 
-	                var txt = args.field.querySelector('input')
+	                var txt = args.field.querySelector('input');
 	                var txtVal = txt.value;
-
-	                if (txtVal == ""){
-	                	return
-	                }
 
 	                var txtArea = document.createElement('TEXTAREA');
 	                txtArea.readOnly = true;
@@ -102,12 +188,40 @@
 
 	            }
 
+	            if (args.name == 'Nacimiento'){
+
+	            	var txt = args.field.querySelector('input')
+	                var txtVal = txt.value;
+
+	                var link = document.createElement('a');
+	                link.setAttribute('href', txtVal);
+	                link.setAttribute('target', "_blank");
+	                link.innerHTML = "Certificado de Nacimiento";
+
+	                args.field.innerHTML = "";
+	                args.field.appendChild(link)
+
+	            }
+
 	            if (args.name == 'ppid'){
 	                return false;
 	            }
 		    });
 
 		    chart.load(familiares);
+
+			var span = document.getElementsByClassName("close")[0];
+
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+
 		};
     </script>
 </body>
