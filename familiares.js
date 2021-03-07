@@ -3,8 +3,10 @@ const familiares = [
 	id: 0, 
 	tags: ["blue"], 
 	Nombre: "Basso Caffarini",
-	Nacionalidad: "Italiana", 
-	Residencia: "",
+	Nacionalidad: "Italiana",
+	Profesión: "Marinero",
+	LugarNacimiento: "San Benedetto del Tronto",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/San_Benedetto_del_Tronto",
 	img: "./img/Hombre_1.jpg",
 	Nacimiento: "./img/Hombre_1.jpg"
 },
@@ -23,7 +25,9 @@ const familiares = [
 	tags: ["blue"], 
 	Nombre: "Andrea Caffarini",
 	Nacionalidad: "Italiana", 
-	Residencia: "",
+	LugarNacimiento: "San Benedetto del Tronto",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/San_Benedetto_del_Tronto",
+	Profesión: "Marinero",
 	img: "./img/Hombre_1.jpg",
 },
 { 
@@ -40,7 +44,10 @@ const familiares = [
 	ppid: 550,
 	tags: ["blue"], 
 	Nombre: "Tomasso Caffarini",
-	Nacionalidad: "Italiana", 
+	Profesión: "Zapatero",
+	Nacionalidad: "Italiana",
+	LugarNacimiento: "Ortona",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/Ortona",
 	Residencia: "",
 	img: "./img/Hombre_1.jpg",
 },
@@ -52,25 +59,94 @@ const familiares = [
 	Nacionalidad: "Italiana",
 	img: "./img/Mujer_1.jpg" 
 },
+{ 
+	id: 530,
+	pid: 501,
+	ppid: 550,
+	Nombre: "Teresa Caffarini",
+	Nacionalidad: "Italiana",
+	LugarNacimiento: "Ortona",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/Ortona",
+	img: "./img/Mujer_1.jpg",
+},
+{ 
+	id: 512,
+	pid: 501,
+	ppid: 550,
+	Nombre: "Rocco Caffarini",
+	Profesión: "Marinero",
+	Nacionalidad: "Italiana",
+	LugarNacimiento: "Ortona",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/Ortona",
+	img: "./img/Hombre_1.jpg",
+},
+{ 
+	id: 522,
+	pid: 512,
+	tags: ["partner"], 
+	Nombre: "Filomena Primavera", 
+	Nacionalidad: "Italiana",
+	img: "./img/Mujer_1.jpg"
+},
+{ 
+	id: 513,
+	pid: 512,
+	ppid: 522,
+	Nombre: "Agostino Caffarini",
+	FechaNacimiento: "1878",
+	FechaDefuncion: "1882",
+	img: "./img/Hombre_1.jpg",
+},
+{ 
+	id: 514,
+	pid: 512,
+	ppid: 522,
+	Nombre: "Alfredo Caffarini",
+	FechaNacimiento: "1883",
+	img: "./img/Hombre_1.jpg",
+},
+{ 
+	id: 515,
+	pid: 512,
+	ppid: 522,
+	Nombre: "Ernesto Caffarini",
+	FechaNacimiento: "1886",
+	img: "./img/Hombre_1.jpg",
+},
 {
 	id: 900, 
 	pid: 502,
 	ppid: 552,
-	Nombre: "Nicola Caffarini", 
+	Nombre: "Nicola Caffarini",
+	Nacimiento: "09/12/1876",
+	FechaCasamiento: "1904",
+	Profesión: "Telegrafista",
+	FechaDefuncion: "06/01/1968",
 	img: "./img/Hombre_1.jpg"
+},
+{ 
+	id: 920, 
+	pid: 900, 
+	tags: ["partner"], 
+	Nombre: "Celedonia García", 
+	Nacionalidad: "Italiana",
+	FechaCasamiento: "1904",
+	img: "./img/Mujer_1.jpg"
 },
 {
 	id: 901, 
 	pid: 502,
 	ppid: 552,
-	Nombre: "Giovanni Caffarini", 
+	Nombre: "Giovanni Caffarini",
+	FechaNacimiento: "1878",
 	img: "./img/Hombre_1.jpg"
 },
 {
 	id: 902, 
 	pid: 502,
 	ppid: 552,
-	Nombre: "Titto Caffarini", 
+	Nombre: "Titto Caffarini",
+	FechaNacimiento: "1881",
 	img: "./img/Hombre_1.jpg"
 },
 {
@@ -78,7 +154,36 @@ const familiares = [
 	pid: 502,
 	ppid: 552,
 	Nombre: "María Rachele Caffarini", 
+	FechaNacimiento: "31/01/1883",
 	img: "./img/Mujer_1.jpg"
+},
+{
+	id: 850,
+	pid: 903,
+	tags: ["partner"], 
+	Nombre: "Martín Christin",
+	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 851, 
+	pid: 903,
+	ppid: 850,
+	Nombre: "Horacio Pedro Christin", 
+	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 852, 
+	pid: 903,
+	ppid: 850,
+	Nombre: "Elvira Christin", 
+	img: "./img/Mujer_1.jpg"
+},
+{
+	id: 853, 
+	pid: 903,
+	ppid: 850,
+	Nombre: "Héctor Sixto Christin", 
+	img: "./img/Hombre_1.jpg"
 },
 {
 	id: 904, 
@@ -91,8 +196,16 @@ const familiares = [
 	id: 905, 
 	pid: 502,
 	ppid: 552,
-	Nombre: "Pedro Caffarini", 
+	Nombre: "Pedro Caffarini",
+	FechaDefuncion: "08/09/1982",
 	img: "./img/Hombre_1.jpg"
+},
+{
+	id: 915,
+	pid: 905,
+	tags: ["partner"], 
+	Nombre: "Elba Lidia",
+	img: "./img/Mujer_1.jpg"
 },
 {
 	id: 906, 
@@ -110,7 +223,9 @@ const familiares = [
 	Nacionalidad: "Argentina", 
 	Residencia: "Hurlingham | Buenos Aires | Argentina", 
 	img: "./img/Hombre_1.jpg", 
-	Profesión: "Peluquero", 
+	Profesión: "Peluquero",
+	FechaDefuncion: "27/08/1936",
+	CausaDefuncion: "Operación de apéndice",
 	Biografía: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 },
 { 
@@ -130,14 +245,14 @@ const familiares = [
 	Nacionalidad: "Argentino",
 	Profesión: "Obstetra",
 	Residencia: "Mar del Plata | Buenos Aires | Argentina", 
-	Título: "", 
+	FechaNacimiento: "11/07/1897",
 	img: "./img/Hombre_1.jpg" },
 { 
 	id: 4, 
 	pid:1, 
 	ppid: 2, 
 	Nombre: "Nicolita Caffarini", 
-	Título: "", 
+	FechaDefuncion: "1958-1960",
 	img: "./img/Hombre_1.jpg" },
 { 
 	id: 5, 
