@@ -5,225 +5,175 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <title>Arbol genealógico de los Caffarini</title>
-    <style id="myStyles">
-        html, body {
-		    margin: 0px;
-		    padding: 0px;
-		    width: 100%;
-		    height: 100%;
-		    font-family: Helvetica;
-		    overflow: hidden;
-		}
 
-		#tree {
-		    width: 100%;
-		    height: 100%;
-		}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.css" integrity="sha512-RVmrWua3k1yTDEOg4Yzs2bK5+Thh7nM6jrhDq/6/5/Mwa0JbYe4pP4YMK5sqghKz01T3DgrwYc57Jaf1PSurCg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./src/css/main.css">
 
-		.edit-tags {
-			display: none;
-		}
+    <style>
+    	body {
+    		background-color: #EEE9D8;
+    	}
+    	#video-container {
+    		position: relative;
+    		z-index: 0;
+    	}
 
-		.edit-fields,
-		.details-view {
-			overflow: scroll;
-		}
+    	#titulo-overlay {
+    		position: absolute;
+    		display: flex;
+			align-self: center;
+			align-items: center;
+    		vertical-align: center;
+    		margin: auto;
+			padding: 0;
+    		top: 0;
+    		left: 0;
+    		right: 0;
+    		bottom: 0;
+    		z-index: 1;
+    		font-size: 3rem;
+    		color: white;
 
-		textarea {
-		  resize: vertical;
-		}
+    	}
 
-		.icon {
-		  display: inline-block;
-		  width: 1em;
-		  height: 1em;
-		  stroke-width: 0;
-		  stroke: currentColor;
-		  fill: currentColor;
-		}
+    	#titulo-overlay > h1 {
+    		margin: 0;
+    		padding-left: 5rem;
+    		text-shadow: 0px 1px 3px black;
+    	}
 
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 1;
-			left: 0;
-			top: 0;
+    	#seccion-branches {
+    		font-size: 1.5rem;
+    		text-align: center;
+    		color: #111;
+    		text-shadow: 0px 1px 5px rgba(0,0,0,0.4);
+    	}
+
+    	.media_seccion > h2 > span {
+    		font-size: 3rem;
+    	}
+
+    	.video-overlay {
+    		position: absolute;
 			width: 100%;
 			height: 100%;
-			overflow: auto;
-			background-color: rgb(0,0,0);
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			background-color: rgba(0,0,0,0.4);
-		}
-
-		.modal-content {
-			background-color: #fefefe;
-			margin: 15% auto;
-			padding: 20px;
-			border: 1px solid #888;
-			width: 80%;
-		}
-
-		.close {
-			color: #aaa;
-			float: right;
-			font-size: 28px;
-			font-weight: bold;
-		}
-
-		.close:hover,
-		.close:focus {
-			color: black;
-			text-decoration: none;
+			z-index: 1;
 			cursor: pointer;
-		} 
+    	}
 
+    	.sub_seccion {
+    		display: flex;
+    		height: 100%;
+    	}
+
+    	.seccion_texto {
+    		padding: 5rem;
+    		z-index: 1;
+    		box-shadow: 0px 5px 15px black;
+    	}
+
+    	.media_seccion {
+    		width: 50%;
+    	}
+
+    	.foto_seccion {
+    		height: 100%;
+    		width: 100%;
+    	}
     </style>
-
 </head>
 <body>
-    <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
-    <script src="./familiares.js"></script>
 
-	<div id="tree"></div>
+	<div id="fullpage">
+		<div class="section" id="seccion-intro">
+			<div id="titulo-overlay">
+				<h1>Los <b>Caffarini</b><br>por el mundo</h1>
+			</div>
+			<div id="video-container">
+				<div class="video-overlay"></div>
+				<video autoplay loop data-autoplay>
+					<source data-src="./src/videos/video_introduccion.mp4" type="video/mp4" />
+					<source data-src="./src/videos/video_introduccion.webm" type="video/webm" />
+				</video>
+			</div>
 
-	<button id="myBtn"></button>
-	<div id="modal-introduccion" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<p>La historia de los Caffarini en Argentina se remonta al 28 de marzo de 1883, cuando Tommaso Caffarini, un zapatero de 35 años oriundo de la localidad costera de Ortona, en la región de Abruzzo, llega al puerto de Buenos Aires en el buque Orenoque procedente de Génova.</p>
-			<p>Aunque Tommaso había nacido en Ortona, venía de una familia de marineros que llevaban varias generaciones residiendo en San Benedetto del Tronto (Marche), ciudad que se había convertido en un importante puerto pesquero por el desarrollo de la técnica de pesca “en parejas”. Su padre Andrea, marinero, se había trasladado a vivir a Ortona, a 85 km de San Benedetto, porque había conocido a la que sería su mujer. Rachele de Palma. Tomasso, a su vez, se trasladó de Ortona a Casoli para casarse con su mujer, Maria Chiara de Benedictis.</p>
-			<p>Habrá sido una decisión muy dura la de Tomasso, que dejaba en Italia a su esposa Maria Chiara de Benedictis y a cuatro hijos, Nicola (nacido el 9 dic 1876), Giovanni (1878), Titto (1881) y Maria Rachele (Marietta), nacida el 31 enero de 1883. Unos días después de anotar a Marietta en el Registro Civil, Tommaso marchó a Génova para poner rumbo a Argentina. Presumiblemente se establece primero en Capital Federal, más tarde en San Isidro y alrededor de 1894 en Echeverría (hoy Rafael Obligado, provincia de Buenos Aires).</p>
-			<p>Poco después, el 29 de julio de 1884 llegó a Argentina en el buque Umberto I Rocco Caffarini, hermano menor de Tommaso, de 35 años, Rocco que fiel a la tradición familiar también era marinero, vivió un tiempo en Génova con su esposa Filomena Primavera antes de embarcarse rumbo a Argentina. Allí habían tenido (al menos) dos hijos: Agostino en 1878 (que falleció en 1882) y Alfredo en 1883.</p>
-			<p>El 28 de diciembre de 1884 llega desde Génova Filomena en el buque Elbe. Filomena viaja acompañada de su cuñada Teresa Caffarini de 22 años, hermana menor de Tommaso y Rocco. Todo parece indicar que Rocco, Filomena y Teresa se establecen en la calle Reconquista 510 de Buenos Aires (donde en 1886 nace su hijo Ernesto). Más tarde (1894), vive en la calle Santa Fe de San Isidro. Rocco no sabía leer ni escribir.</p>
-			<p>El 14 de julio de 1892 llega a Buenos Aires, tras hacer escala en Río de Janeiro y Montevideo, María Chiara de Benedictis, esposa de Tommaso, con sus tres hijos, Nicola, Giovanni y Maria Rachele para reunirse con su marido después de estar 9 años separados. Titto había fallecido. En torno a 1895, Tomasso se estableció en la localidad de Echeverría de la Provincia de Buenos Aires (hoy Rafael Obligado).</p>
-			<p>Nicolás (nació 9 dic 1876). Se casó con Celedonia García (que tenía 16 años) en 1904. No tuvo hijos, trabajaba en ferrocarriles (telegrafista), pero adoptó a Juancito (hijo de Juan, que tenía ferretería en Hurlingham) Murió a los 91 años, el 6 de enero de 1968 (bóveda). Llegó a vivir en Directorio? Juan se casó con Marianna Stagnari (en 1909). Tuvieron varios hijos Juan Angel (Juancito) en 1911, Tomás Manuel (Tomasito), en 1912, Elida Clara (Nelly) en 1914 (tiene una hija arquitecta) y Oscar Roque en 1915. Juan murió a los 69 años el 26 de marzo de 1948 (bóveda). Mariana murió a los 63 años el 27 de diciembre de 1952. Juancito murió el 27 de agosto de 1940 (bóveda). Todos nacidos en Rojas.</p>
-			<p>Maria Rachele (Marietta) se casó con Martin Christin, casa de electricidad. Tuvo a Horacio Pedro Cristin en 1905, Elvira Cristin en 1909, Hector Sixto Christin en 1914. Angélica. Uno era corredor de autos y se mató viajando a Rojas.</p>
-			<p>Domingo peluquero casado con Tita (Natalia Pizzi). Murió por una operación de apéndice el 27 de agosto de 1936. Era pelirrojo Tuvo 3 hijos: Nicolita (murió en 1958-60) que tuvo una hija llamada Patricia Caffarini, Clarita (se fue a vivir a Mar del Plata con Natalia y Héctor, se casó con Enrique Di Leone y tuvo un hijo llamado Enrique o Pity, que tuvo tres hijos varones) y Héctor (médico que se fue a vivir a Mar del Plata con el tema del parto sin dolor, que tuvo a Héctor Domingo Caffarini que vive en M del Plata y que, a su vez, tuvo a Héctor Nicolás Caffarini). Calle Lautaro? Comprobado que nació en 1897 (quizás el 11 de julio).</p>
-			<p>Ana Luisa (Anita) mujer liberal tenía un hijo, que se suicidó cuando se murió su madre, a los 24 años el 13/2/1953. Tomasito o Cachito (Tomás Osvaldo Zambrini). Ana murió el 17/12/1952 (bóveda). Su marido era el Sr. Zambrini.</p>
-			<p>Pedro casado con Elba Lidia. Pedro murió en 1982. Cuca se casó de grande, sin hijos. Su hermano era Osvaldo Tomás, que tuvo 2 hijas: Silvia Anahí y Alicia Inés. La primera está casada con Juan Carlos Etcharren y tiene dos hijas: Matías y Paula. La segunda está casada con Cristian Castro Rey y tienen dos hijos Fernando y Martín. Pedro murió a los 82 años el 8 de septiembre de 1982.</p>
+		</div>
+		<div class="section" id="seccion-branches">
+			<div class="fp-bg"></div>
+			<div class="slide">
+				<div class="sub_seccion">
+					<div class="media_seccion seccion_texto">
+						<h2>Los Caffarini en <span>Italia</span></h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Tortor at auctor urna nunc. Aliquam vestibulum morbi blandit cursus risus at ultrices. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Nunc non blandit massa enim nec dui nunc mattis enim. Duis at tellus at urna condimentum mattis pellentesque id. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Quis risus sed vulputate odio ut enim blandit volutpat. Iaculis nunc sed augue lacus viverra vitae congue eu consequat. Amet tellus cras adipiscing enim eu turpis egestas. Convallis posuere morbi leo urna molestie at. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Faucibus nisl tincidunt eget nullam non. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Vitae tortor condimentum lacinia quis vel. Malesuada fames ac turpis egestas maecenas pharetra. In eu mi bibendum neque egestas. Facilisis gravida neque convallis a cras.</p>
+					</div>
+					<div class="media_seccion seccion_foto">
+						<img class="foto_seccion" src="./img/foto_italia.png" alt="Foto de Italia">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="sub_seccion">
+					<div class="media_seccion seccion_texto">
+						<h2>Los Caffarini en <span>España</span></h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Tortor at auctor urna nunc. Aliquam vestibulum morbi blandit cursus risus at ultrices. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Nunc non blandit massa enim nec dui nunc mattis enim. Duis at tellus at urna condimentum mattis pellentesque id. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Quis risus sed vulputate odio ut enim blandit volutpat. Iaculis nunc sed augue lacus viverra vitae congue eu consequat. Amet tellus cras adipiscing enim eu turpis egestas. Convallis posuere morbi leo urna molestie at. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Faucibus nisl tincidunt eget nullam non. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Vitae tortor condimentum lacinia quis vel. Malesuada fames ac turpis egestas maecenas pharetra. In eu mi bibendum neque egestas. Facilisis gravida neque convallis a cras.</p>
+					</div>
+					<div class="media_seccion seccion_foto">
+						<img class="foto_seccion" src="./img/foto_españa.png" alt="Foto de España">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="sub_seccion">
+					<div class="media_seccion seccion_texto">
+						<h2>Los Caffarini en <span>Argentina</span></h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Tortor at auctor urna nunc. Aliquam vestibulum morbi blandit cursus risus at ultrices. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Nunc non blandit massa enim nec dui nunc mattis enim. Duis at tellus at urna condimentum mattis pellentesque id. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Quis risus sed vulputate odio ut enim blandit volutpat. Iaculis nunc sed augue lacus viverra vitae congue eu consequat. Amet tellus cras adipiscing enim eu turpis egestas. Convallis posuere morbi leo urna molestie at. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Faucibus nisl tincidunt eget nullam non. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Vitae tortor condimentum lacinia quis vel. Malesuada fames ac turpis egestas maecenas pharetra. In eu mi bibendum neque egestas. Facilisis gravida neque convallis a cras.</p>
+					</div>
+					<div class="media_seccion seccion_foto">
+						<img class="foto_seccion" src="./img/foto_argentina.png" alt="Foto de Argentina">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="seccion-arbol">
+			<div class="fp-bg"></div>
+
+			<div id="tree"></div>
+
+			<div id="modal-introduccion" class="modal">
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<p>La historia de los Caffarini en Argentina se remonta al 28 de marzo de 1883, cuando Tommaso Caffarini, un zapatero de 35 años oriundo de la localidad costera de Ortona, en la región de Abruzzo, llega al puerto de Buenos Aires en el buque Orenoque procedente de Génova.</p>
+					<p>Aunque Tommaso había nacido en Ortona, venía de una familia de marineros que llevaban varias generaciones residiendo en San Benedetto del Tronto (Marche), ciudad que se había convertido en un importante puerto pesquero por el desarrollo de la técnica de pesca “en parejas”. Su padre Andrea, marinero, se había trasladado a vivir a Ortona, a 85 km de San Benedetto, porque había conocido a la que sería su mujer. Rachele de Palma. Tomasso, a su vez, se trasladó de Ortona a Casoli para casarse con su mujer, Maria Chiara de Benedictis.</p>
+					<p>Habrá sido una decisión muy dura la de Tomasso, que dejaba en Italia a su esposa Maria Chiara de Benedictis y a cuatro hijos, Nicola (nacido el 9 dic 1876), Giovanni (1878), Titto (1881) y Maria Rachele (Marietta), nacida el 31 enero de 1883. Unos días después de anotar a Marietta en el Registro Civil, Tommaso marchó a Génova para poner rumbo a Argentina. Presumiblemente se establece primero en Capital Federal, más tarde en San Isidro y alrededor de 1894 en Echeverría (hoy Rafael Obligado, provincia de Buenos Aires).</p>
+					<p>Poco después, el 29 de julio de 1884 llegó a Argentina en el buque Umberto I Rocco Caffarini, hermano menor de Tommaso, de 35 años, Rocco que fiel a la tradición familiar también era marinero, vivió un tiempo en Génova con su esposa Filomena Primavera antes de embarcarse rumbo a Argentina. Allí habían tenido (al menos) dos hijos: Agostino en 1878 (que falleció en 1882) y Alfredo en 1883.</p>
+					<p>El 28 de diciembre de 1884 llega desde Génova Filomena en el buque Elbe. Filomena viaja acompañada de su cuñada Teresa Caffarini de 22 años, hermana menor de Tommaso y Rocco. Todo parece indicar que Rocco, Filomena y Teresa se establecen en la calle Reconquista 510 de Buenos Aires (donde en 1886 nace su hijo Ernesto). Más tarde (1894), vive en la calle Santa Fe de San Isidro. Rocco no sabía leer ni escribir.</p>
+					<p>El 14 de julio de 1892 llega a Buenos Aires, tras hacer escala en Río de Janeiro y Montevideo, María Chiara de Benedictis, esposa de Tommaso, con sus tres hijos, Nicola, Giovanni y Maria Rachele para reunirse con su marido después de estar 9 años separados. Titto había fallecido. En torno a 1895, Tomasso se estableció en la localidad de Echeverría de la Provincia de Buenos Aires (hoy Rafael Obligado).</p>
+					<p>Nicolás (nació 9 dic 1876). Se casó con Celedonia García (que tenía 16 años) en 1904. No tuvo hijos, trabajaba en ferrocarriles (telegrafista), pero adoptó a Juancito (hijo de Juan, que tenía ferretería en Hurlingham) Murió a los 91 años, el 6 de enero de 1968 (bóveda). Llegó a vivir en Directorio? Juan se casó con Marianna Stagnari (en 1909). Tuvieron varios hijos Juan Angel (Juancito) en 1911, Tomás Manuel (Tomasito), en 1912, Elida Clara (Nelly) en 1914 (tiene una hija arquitecta) y Oscar Roque en 1915. Juan murió a los 69 años el 26 de marzo de 1948 (bóveda). Mariana murió a los 63 años el 27 de diciembre de 1952. Juancito murió el 27 de agosto de 1940 (bóveda). Todos nacidos en Rojas.</p>
+					<p>Maria Rachele (Marietta) se casó con Martin Christin, casa de electricidad. Tuvo a Horacio Pedro Cristin en 1905, Elvira Cristin en 1909, Hector Sixto Christin en 1914. Angélica. Uno era corredor de autos y se mató viajando a Rojas.</p>
+					<p>Domingo peluquero casado con Tita (Natalia Pizzi). Murió por una operación de apéndice el 27 de agosto de 1936. Era pelirrojo Tuvo 3 hijos: Nicolita (murió en 1958-60) que tuvo una hija llamada Patricia Caffarini, Clarita (se fue a vivir a Mar del Plata con Natalia y Héctor, se casó con Enrique Di Leone y tuvo un hijo llamado Enrique o Pity, que tuvo tres hijos varones) y Héctor (médico que se fue a vivir a Mar del Plata con el tema del parto sin dolor, que tuvo a Héctor Domingo Caffarini que vive en M del Plata y que, a su vez, tuvo a Héctor Nicolás Caffarini). Calle Lautaro? Comprobado que nació en 1897 (quizás el 11 de julio).</p>
+					<p>Ana Luisa (Anita) mujer liberal tenía un hijo, que se suicidó cuando se murió su madre, a los 24 años el 13/2/1953. Tomasito o Cachito (Tomás Osvaldo Zambrini). Ana murió el 17/12/1952 (bóveda). Su marido era el Sr. Zambrini.</p>
+					<p>Pedro casado con Elba Lidia. Pedro murió en 1982. Cuca se casó de grande, sin hijos. Su hermano era Osvaldo Tomás, que tuvo 2 hijas: Silvia Anahí y Alicia Inés. La primera está casada con Juan Carlos Etcharren y tiene dos hijas: Matías y Paula. La segunda está casada con Cristian Castro Rey y tienen dos hijos Fernando y Martín. Pedro murió a los 82 años el 8 de septiembre de 1982.</p>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
-    <script>
-    
-		window.onload = function () {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.extensions.min.js" integrity="sha512-2whoeiZFzA/g6YGH/nI7iXRQlMPYLECQYLFYKXxqigVzCQYAMvQ1v+oy8TYN5ccbyeyG55mjdMjI7CQSN25B0g==" crossorigin="anonymous"></script>
 
-			var modal = document.getElementById("modal-introduccion");
-
-		    OrgChart.templates.family_template = Object.assign({}, OrgChart.templates.ana);
-		    OrgChart.templates.family_template.size = [86, 86];
-		    OrgChart.templates.family_template.plus = "";
-		    OrgChart.templates.family_template.minus = "";
-		    OrgChart.templates.family_template.rippleRadius = 40;
-		    OrgChart.templates.family_template.nombre = '<text style="font-size: 12px;" fill="#000000" x="43" y="100" text-anchor="middle">{val}</text>';
-		    OrgChart.templates.family_template.titulo = '<text style="font-size: 12px;" fill="#aeaeae" x="43" y="115" text-anchor="middle">{val}</text>';
-		    OrgChart.templates.family_template.img = '<clipPath id="{randId}"><circle cx="43" cy="43" r="38.5"></circle></clipPath></circle><image preserveAspectRatio="xMidYMid slice" clip-path="url(#{randId})" xlink:href="{val}" x="3" y="3"  width="80" height="80"></image>';
-		    OrgChart.templates.family_template.node = '<circle stroke-width="3" fill="none" stroke="#aeaeae" cx="43" cy="43" r="41.5"></circle>';
-		    OrgChart.templates.family_template.defs = '<g transform="matrix(0.05,0,0,0.05,-13,-15.5)" id="baby"><circle cx="260" cy="310" r="200" fill="#ffffff"></circle><path fill="#aeaeae" d="m468.64 268.32h-13.591c-18.432-89.348-95.612-157.432-189.139-161.798-.501-.185-1.015-.348-1.545-.482-18.363-4.622-31.188-22.595-31.188-43.707 0-17.828 14.468-32.333 32.252-32.333 12.573 0 22.802 10.258 22.802 22.866 0 8.284 6.716 15 15 15s15-6.716 15-15c0-29.15-23.687-52.866-52.802-52.866-34.326 0-62.252 27.962-62.252 62.333 0 17.876 5.828 34.443 15.769 47.432-80.698 15.127-144.725 78.25-161.291 158.555h-13.591c-24.103 0-43.712 19.596-43.712 43.683 0 24.086 19.609 43.682 43.712 43.682h14.692c20.935 89.871 101.582 157.018 197.596 157.018s176.66-67.148 197.596-157.018h14.692c24.103 0 43.712-19.596 43.712-43.682 0-24.087-19.609-43.683-43.712-43.683zm-265.054 55.257c-8.284-.024-14.981-6.758-14.958-15.043.007-2.337-.708-13.999-15.481-14.041-.026 0-.053 0-.08 0-14.697 0-15.475 11.62-15.481 13.953-.023 8.284-6.75 15.007-15.043 14.957-8.284-.024-14.98-6.759-14.957-15.043.038-13.322 5.349-25.101 14.955-33.166 8.223-6.904 19.065-10.702 30.543-10.702h.148c11.534.033 22.412 3.896 30.63 10.876 9.559 8.12 14.803 19.928 14.765 33.25-.023 8.27-6.735 14.957-14.999 14.957-.013.002-.027.002-.042.002zm52.766 129.374c-26.485 0-48.033-21.533-48.033-48.002 0-8.284 6.716-15 15-15s15 6.716 15 15c0 9.926 8.089 18.002 18.033 18.002s18.033-8.076 18.033-18.002c0-8.284 6.716-15 15-15s15 6.716 15 15c-.001 26.469-21.548 48.002-48.033 48.002zm113.765-129.374c-.015 0-.029 0-.044 0-8.284-.024-14.98-6.759-14.957-15.043.016-5.445-1.993-9.263-6.14-11.673-5.407-3.142-13.27-3.165-18.695-.053-4.161 2.387-6.191 6.193-6.207 11.638-.023 8.27-6.735 14.957-14.999 14.957-.015 0-.029 0-.043 0-8.284-.024-14.981-6.758-14.958-15.043.046-16.149 7.802-29.845 21.281-37.576 14.814-8.497 33.929-8.443 48.695.138 13.434 7.807 21.112 21.547 21.066 37.696-.023 8.271-6.735 14.959-14.999 14.959z"/> </g>';
-		    OrgChart.templates.family_template_blue = Object.assign({}, OrgChart.templates.family_template);
-		    OrgChart.templates.family_template_blue.node = '<circle stroke-width="3" fill="none" stroke="#039BE5" cx="43" cy="43" r="41.5"></circle>';
-		    OrgChart.SEARCH_PLACEHOLDER = "Buscar";
-
-		    var chart = new OrgChart(document.getElementById("tree"), {
-		        template: "family_template",
-		        enableSearch: true,
-		        siblingSeparation: 100,
-		        nodeBinding: {
-		            nombre: "Nombre",
-		            titulo: "Profesión",
-		            img: "img",
-		        },
-		        tags: {
-		            blue: {
-		                template: "family_template_blue"
-		            }
-		        },
-		        menu: {
-		        	mostrarHistoria: { 
-		        		text: "Breve introducción",
-		        		icon: "",
-		        		onClick: function(){
-		        			modal.style.display = "block";
-		        		}
-		        	},
-		        	linkGithub: { 
-		        		text: "Ver proyecto",
-		        		icon: "",
-		        		onClick: function(){
-		        			window.open("https://github.com/hncaffarini/arbol-caffarini",'_blank');
-		        		}
-		        	}
-		        }
-		    });
-
-		    chart.on('render-link', function(sender, args){
-		        if (args.cnode.ppid != undefined){
-		            args.html += '<use xlink:href="#baby" x="'+ args.p.xa +'" y="'+ args.p.ya +'"/>';
-		        }
-		    });
-
-		    chart.editUI.on('field', function(sender, args){
-
-				var datos_persona = args.field.querySelector('input')
-
-				if (datos_persona != null){
-	                if (datos_persona.value == ""){
-	                	return false; // Esconde los datos incompletos de las personas
-	                }
-				}
-
-		    	if (args.name == 'Biografía'){
-
-	                var txt = args.field.querySelector('input');
-	                var txtVal = txt.value;
-
-	                var txtArea = document.createElement('TEXTAREA');
-	                txtArea.readOnly = true;
-	                txtArea.value = txtVal;
-	                txtArea.style.width = "100%";
-	                txtArea.style.border = "none";
-	                txtArea.style.color = "rgb(122, 122, 122)";
-
-	                txt.parentNode.appendChild(txtArea);
-	                txt.parentNode.removeChild(txt)
-
-	            }
-
-	            if (args.name == 'Nacimiento'){
-
-	            	var txt = args.field.querySelector('input')
-	                var txtVal = txt.value;
-
-	                var link = document.createElement('a');
-	                link.setAttribute('href', txtVal);
-	                link.setAttribute('target', "_blank");
-	                link.innerHTML = "Certificado de Nacimiento";
-
-	                args.field.innerHTML = "";
-	                args.field.appendChild(link)
-
-	            }
-
-	            if (args.name == 'ppid'){
-	                return false;
-	            }
-		    });
-
-		    chart.load(familiares);
-
-			var span = document.getElementsByClassName("close")[0];
-
-			span.onclick = function() {
-				modal.style.display = "none";
-			}
-
-			window.onclick = function(event) {
-				if (event.target == modal) {
-					modal.style.display = "none";
-				}
-			}
-
-		};
-    </script>
+	<script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
+    <script src="./src/familiares.js"></script>
+	<script src="./src/js/fullpage.js"></script>
+	<script src="./src/js/arbol.js"></script>
+	<script src="./src/js/modal.js"></script>
 </body>
 </html>
