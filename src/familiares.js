@@ -16,6 +16,7 @@ const familiares = [
 	tags: ["partner"], 
 	Nombre: "Anna Palestini", 
 	Nacionalidad: "Italiana",
+	Profesión: "Hilandera",
 	img: "./img/Mujer_1.jpg" 
 },
 { 
@@ -34,8 +35,9 @@ const familiares = [
 	id: 550, 
 	pid: 501, 
 	tags: ["partner"], 
-	Nombre: "Rachele De Palma", 
+	Nombre: "Rachele De Palma",
 	Nacionalidad: "Italiana",
+	Profesión: "Hilandera",
 	img: "./img/Mujer_1.jpg" 
 },
 { 
@@ -49,7 +51,7 @@ const familiares = [
 	LugarNacimiento: "Ortona",
 	LinkNacimiento: "https://es.wikipedia.org/wiki/Ortona",
 	Residencia: "",
-	img: "./img/Hombre_1.jpg",
+	img: "./img/tomasso_1.jpg",
 },
 { 
 	id: 552, 
@@ -57,7 +59,8 @@ const familiares = [
 	tags: ["partner"], 
 	Nombre: "María Chiara de Benedectis", 
 	Nacionalidad: "Italiana",
-	img: "./img/Mujer_1.jpg" 
+	Profesión: "Hilandera",
+	img: "./img/maria_chiara_1.jpg" 
 },
 { 
 	id: 530,
@@ -155,7 +158,7 @@ const familiares = [
 	ppid: 552,
 	Nombre: "María Rachele Caffarini", 
 	FechaNacimiento: "31/01/1883",
-	img: "./img/Mujer_1.jpg"
+	img: "./img/marietta_1.jpg"
 },
 {
 	id: 850,
@@ -189,8 +192,14 @@ const familiares = [
 	id: 904, 
 	pid: 502,
 	ppid: 552,
-	Nombre: "Luis Caffarini", 
-	img: "./img/Hombre_1.jpg"
+	Nombre: "Luis Tito Caffarini",
+	Profesión: "Ingeniero Civil",
+	FechaNacimiento: "1894",
+	FechaDefuncion: "1980",
+	Nacionalidad: "Argentina",
+	LugarNacimiento: "San Isidro",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/San_Isidro_(Buenos_Aires)",
+	img: "./img/luis_tito_padre_1.jpg"
 },
 {
 	id: 905, 
@@ -198,7 +207,7 @@ const familiares = [
 	ppid: 552,
 	Nombre: "Pedro Caffarini",
 	FechaDefuncion: "08/09/1982",
-	img: "./img/Hombre_1.jpg"
+	img: "./img/pedro_1.jpg"
 },
 {
 	id: 915,
@@ -212,7 +221,7 @@ const familiares = [
 	pid: 502,
 	ppid: 552,
 	Nombre: "Ana Caffarini", 
-	img: "./img/Mujer_1.jpg"
+	img: "./img/ana_1.jpg"
 },
 {
 	id: 1, 
@@ -222,7 +231,7 @@ const familiares = [
 	Nombre: "Domingo Caffarini", 
 	Nacionalidad: "Argentina", 
 	Residencia: "Hurlingham | Buenos Aires | Argentina", 
-	img: "./img/Hombre_1.jpg", 
+	img: "./img/domingo_1.jpg", 
 	Profesión: "Peluquero",
 	FechaDefuncion: "27/08/1936",
 	CausaDefuncion: "Operación de apéndice",
@@ -288,7 +297,7 @@ const familiares = [
 	Nacionalidad: "Argentina", 
 	Profesión: "Médica",
 	Residencia: "Mar del Plata | Buenos Aires | Argentina", 
-	Título: "", 
+	Título: "",
 	img: "./img/Mujer_1_inv.jpg" },
 { 
 	id: 9, 
@@ -304,9 +313,11 @@ const familiares = [
 	pid: 7, 
 	ppid: 9, 
 	Nombre: "Héctor Nicolás Caffarini", 
-	Nacionalidad: "Argentino",
+	Nacionalidad: "Argentina",
 	Profesión: "Programador",
-	Residencia: "Ciudad Autónoma de Buenos Aires | Argentina", 
+	Residencia: "Ciudad Autónoma de Buenos Aires | Argentina",
+	LugarNacimiento: "Mar del Plata",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/Mar_del_Plata",
 	Título: "", 
 	img: "./img/hectornicolascaffarini.jpg", 
 	Contacto: "hncaffarini@gmail.com" },
@@ -330,5 +341,24 @@ const familiares = [
 	pid: 5, 
 	tags: ["partner"],
 	Nombre: "Enrique Di Leone",
-	img: "./img/Hombre_1_inv.jpg" }
+	img: "./img/Hombre_1_inv.jpg" },
+{
+	id: 907, 
+	pid: 904,
+	Nombre: "Luis Tito Caffarini",
+	Profesión: "Arquitecto",
+	FechaNacimiento: "1931",
+	FechaDefuncion: "2003",
+	Nacionalidad: "Argentina",
+	img: "./img/luis_tito_hijo_1.jpg" },
+{
+	id: 908, 
+	pid: 907,
+	Nombre: "Luis Alejandro Caffarini",
+	Profesión: "Intérprete",
+	FechaNacimiento: "1964",
+	LugarNacimiento: "Ciudad Autónoma de Buenos Aires",
+	LinkNacimiento: "https://es.wikipedia.org/wiki/Buenos_Aires",
+	Nacionalidad: "Argentina",
+	img: "./img/Hombre_1.jpg" }
 ]
