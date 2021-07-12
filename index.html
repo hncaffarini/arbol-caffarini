@@ -6,153 +6,86 @@
     <meta name="viewport" content="width=device-width" />
     <title>Arbol genealógico de los Caffarini</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.css" integrity="sha512-RVmrWua3k1yTDEOg4Yzs2bK5+Thh7nM6jrhDq/6/5/Mwa0JbYe4pP4YMK5sqghKz01T3DgrwYc57Jaf1PSurCg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./src/css/main.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-    	body {
-    		background-color: #EEE9D8;
-    	}
-    	#video-container {
-    		position: relative;
-    		z-index: 0;
-    	}
-
-    	#titulo-overlay {
-    		position: absolute;
-    		display: flex;
-			align-self: center;
-			align-items: center;
-    		vertical-align: center;
-    		margin: auto;
-			padding: 0;
-    		top: 0;
-    		left: 0;
-    		right: 0;
-    		bottom: 0;
-    		z-index: 1;
-    		font-size: 4rem;
-    		color: #eee;
-
-    	}
-
-    	#titulo-overlay > h1 {
-    		margin: 0;
-    		padding-left: 5rem;
-    		text-shadow: 0px 5px 15px black;
-    		font-family: 'Dancing Script', cursive;
-    		font-weight: 700;
-    	}
-
-    	#seccion-branches {
-    		font-family: 'Dancing Script', cursive;
-    		font-size: 1.8rem;
-    		text-align: center;
-    		color: #111;
-    		text-shadow: 0px 1px 5px rgba(0,0,0,0.4);
-    	}
-
-    	.media_seccion > h2 {
-    		margin-top: 0;
-    	}
-
-    	.media_seccion > h2 > span {
-    		font-size: 3rem;
-    	}
-
-    	.video-overlay {
-    		position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-color: rgba(0,0,0,0.4);
-			z-index: 1;
-			cursor: pointer;
-    	}
-
-    	.sub_seccion {
-    		display: flex;
-    		height: 100%;
-    	}
-
-    	.seccion_texto {
-    		padding: 5rem;
-    		z-index: 1;
-    		box-shadow: 0px 5px 15px black;
-    	}
-
-    	.media_seccion {
-    		width: 50%;
-    	}
-
-    	.foto_seccion {
-    		height: 100%;
-    		width: 100%;
-    	}
-    </style>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./src/css/timeline.css">
+	
 </head>
 <body>
 
-	<div id="fullpage">
-		<div class="section" id="seccion-intro">
-			<div id="titulo-overlay">
-				<h1>Los <b>Caffarini</b><br>por el mundo</h1>
-			</div>
-			<div id="video-container">
-				<div class="video-overlay"></div>
-				<video autoplay loop data-autoplay>
-					<source data-src="./src/videos/video_introduccion.mp4" type="video/mp4" />
-					<source data-src="./src/videos/video_introduccion.webm" type="video/webm" />
-				</video>
-			</div>
-
-		</div>
-		<div class="section" id="seccion-branches">
-			<div class="fp-bg"></div>
-			<div class="slide">
-				<div class="sub_seccion">
-					<div class="media_seccion seccion_texto">
-						<h2>Los Caffarini en <span>Italia</span></h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Tortor at auctor urna nunc. Aliquam vestibulum morbi blandit cursus risus at ultrices. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Nunc non blandit massa enim nec dui nunc mattis enim. Duis at tellus at urna condimentum mattis pellentesque id. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Quis risus sed vulputate odio ut enim blandit volutpat. Iaculis nunc sed augue lacus viverra vitae congue eu consequat. Amet tellus cras adipiscing enim eu turpis egestas. Convallis posuere morbi leo urna molestie at. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Faucibus nisl tincidunt eget nullam non. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Vitae tortor condimentum lacinia quis vel. Malesuada fames ac turpis egestas maecenas pharetra. In eu mi bibendum neque egestas. Facilisis gravida neque convallis a cras.</p>
-					</div>
-					<div class="media_seccion seccion_foto">
-						<img class="foto_seccion" src="./img/foto_italia.png" alt="Foto de Italia">
-					</div>
-				</div>
-			</div>
-			<div class="slide">
-				<div class="sub_seccion">
-					<div class="media_seccion seccion_texto">
-						<h2>Los Caffarini en <span>España</span></h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Tortor at auctor urna nunc. Aliquam vestibulum morbi blandit cursus risus at ultrices. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Nunc non blandit massa enim nec dui nunc mattis enim. Duis at tellus at urna condimentum mattis pellentesque id. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Quis risus sed vulputate odio ut enim blandit volutpat. Iaculis nunc sed augue lacus viverra vitae congue eu consequat. Amet tellus cras adipiscing enim eu turpis egestas. Convallis posuere morbi leo urna molestie at. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Faucibus nisl tincidunt eget nullam non. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Vitae tortor condimentum lacinia quis vel. Malesuada fames ac turpis egestas maecenas pharetra. In eu mi bibendum neque egestas. Facilisis gravida neque convallis a cras.</p>
-					</div>
-					<div class="media_seccion seccion_foto">
-						<img class="foto_seccion" src="./img/foto_españa.png" alt="Foto de España">
-					</div>
-				</div>
-			</div>
-			<div class="slide">
-				<div class="sub_seccion">
-					<div class="media_seccion seccion_texto">
-						<h2>Los Caffarini en <span>Argentina</span></h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Tortor at auctor urna nunc. Aliquam vestibulum morbi blandit cursus risus at ultrices. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Nunc non blandit massa enim nec dui nunc mattis enim. Duis at tellus at urna condimentum mattis pellentesque id. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Quis risus sed vulputate odio ut enim blandit volutpat. Iaculis nunc sed augue lacus viverra vitae congue eu consequat. Amet tellus cras adipiscing enim eu turpis egestas. Convallis posuere morbi leo urna molestie at. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Faucibus nisl tincidunt eget nullam non. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Vitae tortor condimentum lacinia quis vel. Malesuada fames ac turpis egestas maecenas pharetra. In eu mi bibendum neque egestas. Facilisis gravida neque convallis a cras.</p>
-					</div>
-					<div class="media_seccion seccion_foto">
-						<img class="foto_seccion" src="./img/foto_argentina.png" alt="Foto de Argentina">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section" id="seccion-arbol">
+	<div class="timeline-container" id="timeline-1">
+	  <div class="timeline-header">
+	    <h2 class="timeline-header__title">Caffarini</h2>
+	    <h3 class="timeline-header__subtitle">La historia familiar</h3>
+	  </div>
+	  <div class="timeline">
+	    <div class="timeline-item" data-text="ORIGEN FAMILIAR">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/foto_italia.png"/>
+	        <h2 class="timeline__content-title">1800</h2>
+	        <p class="timeline__content-desc">El primer registro familiar corresponde a Basso Caffarini, nacido y criado en San Benedetto del Tronto (Marche), ciudad que se había convertido en un importante puerto pesquero por el desarrollo de la técnica de pesca “en parejas”. Tanto Basso como su único hijo, Andrea, fueron marineros, y ambos se casaron con mujeres hilanderas. Rocco (el menor de los tres hijos de Andrea) también fue marinero.</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="FAMILIA MARINERA">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/foto_italia.png"/>
+	        <h2 class="timeline__content-title">1800</h2>
+	        <p class="timeline__content-desc">Andrea Caffarini se traslada a la ciudad costera de Ortona Di Mare, en la región de Abruzzo, porque había conocido a quien después sería su esposa: Rachele De Palma. En Ortona nacen sus tres hijos: Tomasso, Teresa y Rocco. Tomasso Caffarini posteriormente se traslada a Casoli para casarse con su mujer, María Chiara de Benedectis, con quien tiene cuatro hijos: Nicola (nacido el 9 dic 1876), Giovanni (1878), Titto (1881) y Maria Rachele (Marietta), nacida el 31 enero de 1883. Unos días después de anotar a Marietta en el Registro Civil, Tommaso marchó a Génova para poner rumbo a Argentina.</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Arribo a Argentina">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/tomasso_1.jpg"/>
+	        <h2 class="timeline__content-title">1883</h2>
+	        <p class="timeline__content-desc">El 28 de marzo de 1883, Tomasso Caffarini desembarca solo en el puerto de Buenos Aires (Argentina) con el buque Orenoque, procedente de Génova. Zapatero de profesión, llega con 35 años de edad. Presumiblemente se establece primero en Capital Federal, más tarde en San Isidro y alrededor de 1894 en Echeverría (hoy Rafael Obligado, provincia de Buenos Aires).</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Arribo de Rocco">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/foto_argentina.png"/>
+	        <h2 class="timeline__content-title">1884</h2>
+	        <p class="timeline__content-desc">El 29 de julio de 1884 llegó a Argentina en el buque Umberto I Rocco Caffarini, hermano menor de Tommaso, de 35 años, Rocco que fiel a la tradición familiar también era marinero, vivió un tiempo en Génova con su esposa Filomena Primavera antes de embarcarse rumbo a Argentina. Allí habían tenido (al menos) dos hijos: Agostino en 1878 (que falleció en 1882) y Alfredo en 1883.</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Arribo de Filomena">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/tomasso_1.jpg"/>
+	        <h2 class="timeline__content-title">1884</h2>
+	        <p class="timeline__content-desc">El 28 de diciembre de 1884 llega desde Génova Filomena en el buque Elbe. Filomena viaja acompañada de su cuñada Teresa Caffarini de 22 años, hermana menor de Tommaso y Rocco. Todo parece indicar que Rocco, Filomena y Teresa se establecen en la calle Reconquista 510 de Buenos Aires (donde en 1886 nace su hijo Ernesto). Más tarde (1894), vive en la calle Santa Fe de San Isidro. Rocco no sabía leer ni escribir.</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Arribo de María Chiara">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/maria_chiara_1.jpg"/>
+	        <h2 class="timeline__content-title">1892</h2>
+	        <p class="timeline__content-desc">El 14 de julio de 1892 llega a Buenos Aires, tras hacer escala en Río de Janeiro y Montevideo, María Chiara de Benedictis, esposa de Tommaso, con sus tres hijos, Nicola, Giovanni y Maria Rachele para reunirse con su marido después de estar 9 años separados. Titto había fallecido. En torno a 1895, Tomasso se estableció en la localidad de Echeverría de la Provincia de Buenos Aires (hoy Rafael Obligado).</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Los hijos de Tomasso">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/maria_chiara_1.jpg"/>
+	        <h2 class="timeline__content-title">1900</h2>
+	        <p class="timeline__content-desc">Nicola, conocido posteriormente como Nicolás, se casó con Celedonia García en 1904 (que tenía 16 años), fue telegrafista, y adoptó a Juan (el hijo de un ferretero en Hurlingham). Marietta se casó con Martín Christin, quien era el dueño de una casa de electricidad. Uno de sus cuatro hijos fue corredor de autos, y murió en la ruta viajando a Rojas. Domingo fue peluquero y antes de morir por una operación de apéndice, tuvo tres hijos con Natalia Pizzi: Nicolita, Clarita y Héctor.</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Llegada a Mar del Plata">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/maria_chiara_1.jpg"/>
+	        <h2 class="timeline__content-title">1950</h2>
+	        <p class="timeline__content-desc">Natalia, Clarita y Héctor se mudan a la ciudad de Mar del Plata. Este último fue un obstetra reconocido en la ciudad por llevar la modalidad del "parto sin dolor", y tiene dos hijos: Héctor Domingo y Beatriz.</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Reencuentros casuales">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/maria_chiara_1.jpg"/>
+	        <h2 class="timeline__content-title">2018</h2>
+	        <p class="timeline__content-desc">Héctor Nicolás Caffarini, descendiente de la rama marplatense familiar, asiste a una convención de informática en la que conoce de manera fortuita a Lucila Caffarini, descendiente de la rama que permaneció en Hurlingham.</p>
+	      </div>
+	    </div>
+	    <div class="timeline-item" data-text="Desarrollo del árbol familiar">
+	      <div class="timeline__content"><img class="timeline__img" src="./img/maria_chiara_1.jpg"/>
+	        <h2 class="timeline__content-title">2021</h2>
+	        <p class="timeline__content-desc">Alejandro Caffarini, luego de emigrar a España, se pone en contacto con Héctor Nicolás para empezar a reconstruir el árbol familiar, dando origen a esta página.</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<div id="seccion-arbol">
 			<div class="fp-bg"></div>
 
 			<div id="tree"></div>
@@ -174,16 +107,71 @@
 				</div>
 			</div>
 
-		</div>
 	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.extensions.min.js" integrity="sha512-2whoeiZFzA/g6YGH/nI7iXRQlMPYLECQYLFYKXxqigVzCQYAMvQ1v+oy8TYN5ccbyeyG55mjdMjI7CQSN25B0g==" crossorigin="anonymous"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
     <script src="./src/familiares.js"></script>
-	<script src="./src/js/fullpage.js"></script>
 	<script src="./src/js/arbol.js"></script>
 	<script src="./src/js/modal.js"></script>
+	<script type="text/javascript">
+	  (function($) {
+	  $.fn.timeline = function() {
+	    var selectors = {
+	      id: $(this),
+	      item: $(this).find(".timeline-item"),
+	      activeClass: "timeline-item--active",
+	      img: ".timeline__img"
+	    };
+	    selectors.item.eq(0).addClass(selectors.activeClass);
+	    selectors.id.css(
+	      "background-image",
+	      "url(" +
+	        selectors.item
+	          .first()
+	          .find(selectors.img)
+	          .attr("src") +
+	        ")"
+	    );
+	    var itemLength = selectors.item.length;
+	    $(window).scroll(function() {
+	      var max, min;
+	      var pos = $(this).scrollTop();
+	      selectors.item.each(function(i) {
+	        min = $(this).offset().top;
+	        max = $(this).height() + $(this).offset().top;
+	        var that = $(this);
+	        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+	          selectors.item.removeClass(selectors.activeClass);
+	          selectors.id.css(
+	            "background-image",
+	            "url(" +
+	              selectors.item
+	                .last()
+	                .find(selectors.img)
+	                .attr("src") +
+	              ")"
+	          );
+	          selectors.item.last().addClass(selectors.activeClass);
+	        } else if (pos <= max - 40 && pos >= min) {
+	          selectors.id.css(
+	            "background-image",
+	            "url(" +
+	              $(this)
+	                .find(selectors.img)
+	                .attr("src") +
+	              ")"
+	          );
+	          selectors.item.removeClass(selectors.activeClass);
+	          $(this).addClass(selectors.activeClass);
+	        }
+	      });
+	    });
+	  };
+	})(jQuery);
+
+	$("#timeline-1").timeline();
+
+	</script>
 </body>
 </html>

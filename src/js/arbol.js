@@ -19,6 +19,7 @@ window.onload = function () {
 	var chart = new OrgChart(document.getElementById("tree"), {
 		template: "family_template",
 		enableSearch: true,
+		zoom: false,
 		siblingSeparation: 100,
 		nodeBinding: {
 			nombre: "Nombre",
